@@ -17,13 +17,13 @@ $ composer require ntavelis/auth-email
 Then add the service provider in `config/app.php`:
 
 ```php
-Ntavelis\AuthEmail\AuthEmailServiceProvider::class,,
+Ntavelis\AuthEmail\AuthEmailServiceProvider::class,
 ```
 
 Run your new command:
 
 ``` bash
-$ php artisan make:auth
+$ php artisan auth:email
 ```
 
 ## Options/Parameters
@@ -33,20 +33,20 @@ Auth-email provides the following options:
 If you have already bootstrapped your application with make:auth before you discover this package, then you can pass the -o, --only flag, to make auth-email skip rerunning this command.
 
 ``` bash
-$ php artisan make:auth -o
+$ php artisan auth:email -o
 ```
 
 Auth-email can run your migrations after setup, to keep installation process as minimum as possible. Pass it the -m, -migrate flag.
 
 ``` bash
-$ php artisan make:auth -m
+$ php artisan auth:email -m
 ```
 Note: make sure you configured your database settings properly before running the command.
 
 You can also run command with both flags.
 
 ``` bash
-$ php artisan make:auth -o -m
+$ php artisan auth:email -o -m
 ```
 ## Email markup
 To change the look of the activation email you sent to the user, you have to modify the `resources/views/emails/auth.blade.php` blade file.
