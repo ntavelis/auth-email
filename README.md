@@ -17,7 +17,7 @@ $ composer require ntavelis/auth-email
 Then add the service provider in `config/app.php`:
 
 ```php
-Ntavelis\AuthEmail\AuthEmailServiceProvider::class,,
+Ntavelis\AuthEmail\AuthEmailServiceProvider::class,
 ```
 
 Run your new command:
