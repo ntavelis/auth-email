@@ -1,18 +1,17 @@
 {
     "name": "Ntavelis/AuthEmail",
     "type": "library",
-    "description": ":package_description",
+    "description": "Generates Email Authentication on top of artisan's make:auth command.",
     "keywords": [
-        "Ntavelis",
+        "Laravel",
         "AuthEmail"
     ],
     "homepage": "https://github.com/Ntavelis/AuthEmail",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
+            "name": "Ntavelis Athanasios",
+            "email": "davelis89@gmail.com",
             "role": "Developer"
         }
     ],
