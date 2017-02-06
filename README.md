@@ -30,13 +30,13 @@ $ php artisan auth:email
 
 Auth-email provides the following options:
 
-If you have already bootstrapped your application with make:auth before you discover this package, then you can pass the -o, --only flag, to make auth-email skip rerunning this command.
+If you have already bootstrapped your application with `make:auth` before you discover this package, then you can pass the `-o`, `--only` flag, to make auth-email skip rerunning this command.
 
 ``` bash
 $ php artisan auth:email -o
 ```
 
-Auth-email can run your migrations after setup, to keep installation process as minimum as possible. Pass it the -m, -migrate flag.
+Auth-email can run your migrations after setup, to keep installation process as minimum as possible. Pass it the `-m`, `--migrate` flag.
 
 ``` bash
 $ php artisan auth:email -m
@@ -48,6 +48,15 @@ You can also run command with both flags.
 ``` bash
 $ php artisan auth:email -o -m
 ```
+## Migrations
+After the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
+1 new table to store activation tokens and 1 new column in the user table to track the authenticated(Via email) users will be generated.
+
+Alternatively as mentioned above pass it the `-m` flag to instantly run the migrations for you after setup.
+``` bash
+$ php artisan auth:email -m
+```
+
 ## Email markup
 To change the look of the activation email you sent to the user, you have to modify the `resources/views/emails/auth.blade.php` blade file.
 
@@ -55,9 +64,21 @@ This file uses Laravel's 5.4 new feature markdown mailables, please refer to the
 https://laravel.com/docs/5.4/mail#markdown-mailables
 
 ## Generated Files
-List of all the generated files from the make:email command:
+List of all the generated files from the `auth:email` command:
 
-# To be updated
+| File                                            | Location                            | Functionality                                   |
+| :---------------------------------------------: |-------------------------------------| ------------------------------------------------|
+| LoginController.php                             | /app/Http/Controllers/Auth/         | Adds authenticated method                       |
+| RegisterController.php                          | /app/Http/Controllers/Auth/         | Adds 4 new methods for email authentication     |
+| login.blade.php                                 | /resources/views/auth/              | Adds flash message logic, to display alerts     |
+| auth.blade.php                                  | /resources/views/emails/            | Activation email, with activation link          |
+| Y_m_d_His_create_user_activations_table.php     | /database/migrations/               | Migration that creates table user_activations   |
+| Y_m_d_His_add_boolean_column_to_users_table.php | /database/migrations/               | Adds column activated to users table            |
+| authEmail.php                                   | /resources/lang/en/                 | The displays messages exist in this file        |
+
+Also one more line is appended into you routes file `web.php`, which creates the activation route of your application.
+The activation route looks like this `/user/activation/{token}`.
+
 
 ## Change log
 
