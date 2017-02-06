@@ -2,7 +2,6 @@
 
 [![Latest Stable Version](https://poser.pugx.org/ntavelis/auth-email/v/stable)](https://packagist.org/packages/ntavelis/auth-email)
 [![License](https://poser.pugx.org/ntavelis/auth-email/license)](https://packagist.org/packages/ntavelis/auth-email)
-[![Total Downloads](https://poser.pugx.org/ntavelis/auth-email/downloads)](https://packagist.org/packages/ntavelis/auth-email)
 
 
 Auth-email provides out of the box email authentication for your Laravel 5.4 application. It leverages the Laravel's functionality provided by the `make:auth` command, which runs for you and then proceeds to configure email authentication.
@@ -68,7 +67,7 @@ Auth-email provides 2 flash messages out of the box.
 
 The `authEmail.mailSend` message informs the user after registration to check their inbox to activate their account.
 
-The `authEmail.confirm` message informs the user, who just tried to login without email authentication, that they have to click the activate button on the email.
+The `authEmail.confirm` message informs the user, who just tried to login without being authenticated, that they have to click the activate button on the email.
 
 If you need to change these messages, you can do so from this file `resources/lang/en/authEmail.php`.
 
