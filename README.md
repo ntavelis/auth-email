@@ -57,7 +57,7 @@ $ php artisan auth:email -m
 ```
 
 ## Email markup
-To change the look of the activation email you sent to the user, you have to modify the `resources/views/emails/auth.blade.php` blade file.
+To change the look of the activation email you send to the user, you have to modify the `resources/views/emails/auth.blade.php` blade file.
 
 This file uses Laravel's 5.4 new feature markdown mailables, please refer to the Laravel documentation for details.
 https://laravel.com/docs/5.4/mail#markdown-mailables
