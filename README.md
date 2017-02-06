@@ -65,9 +65,9 @@ https://laravel.com/docs/5.4/mail#markdown-mailables
 ## Flash messages
 Auth-email provides 2 flash messages out of the box.
 
-The `authEmail.mailSend` message informs the user after registration to check their inbox to activate their account.
+The `authEmail.mailSend` message informs the user after registration to check their inbox and activate their account.
 
-The `authEmail.confirm` message informs the user, who just tried to login without being authenticated, that they have to click the activate button on the email.
+The `authEmail.confirm` message informs the user, who just tried to login without being authenticated, that they have to click the activate button on the email we sent them.
 
 If you need to change these messages, you can do so from this file `resources/lang/en/authEmail.php`.
 
