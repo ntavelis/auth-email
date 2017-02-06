@@ -1,10 +1,13 @@
 # Laravel 5.4 email-auth
 
-[![License](https://poser.pugx.org/ntavelis/auth-email/license)](https://packagist.org/packages/ntavelis/auth-email)
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Total Downloads][ico-downloads]][link-downloads]
+
 
 Auth-email provides out of the box email authentication for your Laravel 5.4 application. It leverages the Laravel's functionality provided by the make:auth command, which runs for you and then proceeds to configure email authentication.
 
-## Installation
+## Install
 
 Via Composer
 
@@ -71,7 +74,7 @@ List of all the generated files from the `auth:email` command:
 | auth.blade.php                                  | /resources/views/emails/            | Activation email, with activation link          |
 | Y_m_d_His_create_user_activations_table.php     | /database/migrations/               | Migration that creates table user_activations   |
 | Y_m_d_His_add_boolean_column_to_users_table.php | /database/migrations/               | Adds column activated to users table            |
-| authEmail.php                                   | /resources/lang/en/                 | The displays messages exist in this file        |
+| authEmail.php                                   | /resources/lang/en/                 | The messages text exists in this file           |
 
 Also one more line is appended into you routes file `web.php`, which creates the activation route of your application.
 The activation route looks like this `/user/activation/{token}`.
