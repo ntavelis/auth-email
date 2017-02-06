@@ -67,7 +67,7 @@ List of all the generated files from the `auth:email` command:
 | Y_m_d_His_add_boolean_column_to_users_table.php | /database/migrations/               | Adds column activated to users table            |
 | authEmail.php                                   | /resources/lang/en/                 | The displays messages exist in this file        |
 
-Also on more line is appended into you routes file `web.php`, which creates the activation route of your application.
+Also one more line is appended into you routes file `web.php`, which creates the activation route of your application.
 The activation route looks like this `/user/activation/{token}`.
 
 
