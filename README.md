@@ -30,7 +30,7 @@ $ php artisan auth:email
 
 Auth-email provides the following options:
 
-If you have already bootstrapped your application with `make:auth` before you discover this package, then you can pass the `-o`, `--only` flag, to make auth-email skip running this command.
+If you have already bootstrapped your application with `make:auth` before you discovered this package, then you can pass the `-o`, `--only` flag, to make auth-email skip running `make:auth` command.
 
 ``` bash
 $ php artisan auth:email -o
@@ -50,7 +50,7 @@ $ php artisan auth:email -o -m
 ```
 ## Migrations
 After the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
-1 new table to store activation tokens and 1 new column in the user table to track the authenticated(Via email) users will be generated.
+Which provide 1 new table to store activation tokens and 1 new column in the user table to track the authenticated(Via email) users.
 
 Alternatively as mentioned above pass it the `-m` flag to instantly run the migrations for you after setup.
 ``` bash
@@ -62,6 +62,14 @@ To change the look of the activation email you sent to the user, you have to mod
 
 This file uses Laravel's 5.4 new feature markdown mailables, please refer to the Laravel documentation for details.
 https://laravel.com/docs/5.4/mail#markdown-mailables
+
+## Flash messages
+Auth-email provides 2 flash messages out of the box.
+
+The `authEmail.mailSend` message informs the user after registration to check their inbox to activate their account.
+The `authEmail.confirm` message informs the user, who just tried to login without email authentication, that they have to click the activate button on the email.
+
+If you need to change these messages, you can do so from this file `resources/lang/en/authEmail.php`.
 
 ## Generated Files
 List of all the generated files from the `auth:email` command:
