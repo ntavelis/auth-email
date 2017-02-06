@@ -1,8 +1,8 @@
 # Laravel 5.4 email-auth
 
-[![Latest Stable Version](https://poser.pugx.org/ntavelis/auth-email/version.png)](https://packagist.org/packages/ntavelis/auth-email)
-[![Latest Stable Version](https://poser.pugx.org/ntavelis/auth-email/d/total.png)](https://packagist.org/packages/ntavelis/auth-email)
-[![Software License][ico-license]](LICENSE.md)
+[![Latest Stable Version](https://poser.pugx.org/ntavelis/auth-email/v/stable)](https://packagist.org/packages/ntavelis/auth-email)
+[![Total Downloads](https://poser.pugx.org/ntavelis/auth-email/downloads)](https://packagist.org/packages/ntavelis/auth-email)
+[![License](https://poser.pugx.org/ntavelis/auth-email/license)](https://packagist.org/packages/ntavelis/auth-email)
 
 Auth-email provides out of the box email authentication for your Laravel 5.4 application. It leverages the Laravel's functionality provided by the make:auth command, which runs for you and then proceeds to configure email authentication.
 
