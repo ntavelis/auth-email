@@ -49,6 +49,10 @@ class LoginController extends Controller {
     }
 
     /**
+     * In every login attempt trait this function is triggered from the
+     * AuthenticatesUsers Trait, if he is not Authenticated proper
+     * Flash message is displayed on the screen.
+     * 
      * @param Request $request
      * @param $user
      * @return \Illuminate\Http\RedirectResponse
