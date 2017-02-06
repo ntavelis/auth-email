@@ -6,7 +6,7 @@
 
 Auth-email provides out of the box email authentication for your Laravel 5.4 application. It leverages the Laravel's functionality provided by the `make:auth` command, which runs for you and then proceeds to configure email authentication.
 
-## Install
+## Installation
 
 Via Composer
 
@@ -49,7 +49,7 @@ $ php artisan auth:email -o -m
 ```
 ## Migrations
 After the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
-Which provide 1 new table to store activation tokens and 1 new column in the user table to track the authenticated(Via email) users.
+Which provide 1 new table to store activation tokens and 1 new column in the user table, create_users_table migration is provided by default in laravel, we just add 1 column with the new migration to track the authenticated(Via email) users.
 
 Alternatively as mentioned above pass it the `-m` flag to instantly run the migrations for you after setup.
 ``` bash
