@@ -30,7 +30,7 @@ $ php artisan auth:email
 
 Auth-email provides the following options:
 
-If you have already bootstrapped your application with `make:auth` before you discover this package, then you can pass the `-o`, `--only` flag, to make auth-email skip rerunning this command.
+If you have already bootstrapped your application with `make:auth` before you discover this package, then you can pass the `-o`, `--only` flag, to make auth-email skip running this command.
 
 ``` bash
 $ php artisan auth:email -o
