@@ -1,8 +1,8 @@
 # Laravel 5.4 email-auth
 
-[![Latest Stable Version](https://poser.pugx.org/ntavelis/auth-email/v/stable)](https://packagist.org/packages/ntavelis/auth-email)
-[![License](https://poser.pugx.org/ntavelis/auth-email/license)](https://packagist.org/packages/ntavelis/auth-email)
-[![Total Downloads](https://poser.pugx.org/ntavelis/auth-email/downloads)](https://packagist.org/packages/ntavelis/auth-email)
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+[![Total Downloads][ico-downloads]][link-downloads]
 
 
 Auth-email provides out of the box email authentication for your Laravel 5.4 application. It leverages the Laravel's functionality provided by the make:auth command, which runs for you and then proceeds to configure email authentication.
@@ -60,7 +60,7 @@ $ php artisan auth:email -m
 ## Email markup
 To change the look of the activation email you sent to the user, you have to modify the `resources/views/emails/auth.blade.php` blade file.
 
-This file uses Laravel's 5.4 new feature markdown mailables, please refer to the Laravel's documentation for details.
+This file uses Laravel's 5.4 new feature markdown mailables, please refer to the Laravel documentation for details.
 https://laravel.com/docs/5.4/mail#markdown-mailables
 
 ## Generated Files
