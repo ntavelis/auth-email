@@ -48,6 +48,15 @@ You can also run command with both flags.
 ``` bash
 $ php artisan auth:email -o -m
 ```
+## Migrations
+After the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
+1 new table to store activation tokens and 1 new column in the user table to track the authenticated(Via email) users will be generated.
+
+Alternatively as mentioned above pass it the `-m` flag to instantly run the migrations for you after setup.
+``` bash
+$ php artisan auth:email -m
+```
+
 ## Email markup
 To change the look of the activation email you sent to the user, you have to modify the `resources/views/emails/auth.blade.php` blade file.
 
