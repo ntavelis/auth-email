@@ -58,7 +58,7 @@ https://laravel.com/docs/5.4/mail#markdown-mailables
 List of all the generated files from the `auth:email` command:
 
 | File                                            | Location                            | Functionality                                   |
-| ----------------------------------------------- |:-----------------------------------:| -----------------------------------------------:|
+| :---------------------------------------------: |-------------------------------------| ------------------------------------------------|
 | LoginController.php                             | /app/Http/Controllers/Auth/         | Adds authenticated method                       |
 | RegisterController.php                          | /app/Http/Controllers/Auth/         | Adds 4 new methods for email authentication     |
 | login.blade.php                                 | /resources/views/auth/              | Adds flash message logic, to display alerts     |
