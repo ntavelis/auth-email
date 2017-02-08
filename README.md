@@ -42,10 +42,17 @@ $ php artisan auth:email -m
 ```
 Note: make sure you configured your database settings properly before running the command.
 
-You can also run command with both flags.
+Auth-email can make your generated `app/mail/ActivateAccount.php` implement the ShouldQueue itnerface. Pass it the `-s`, `--queue` flag.
 
 ``` bash
 $ php artisan auth:email -o -m
+```
+Note:Make sure you configured your queues, otherwise no email would be send.
+
+You can also run command with any number of flags.
+
+``` bash
+$ php artisan auth:email -o -m -s
 ```
 ## Migrations
 After the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
@@ -70,6 +77,15 @@ The `authEmail.mailSend` message informs the user after registration to check th
 The `authEmail.confirm` message informs the user, who just tried to login without being authenticated, that they have to click the activate button on the email we sent them.
 
 If you need to change these messages, you can do so from this file `resources/lang/en/authEmail.php`.
+
+## Queue
+
+The default behavior is not to implement the ShouldQueue interface, for simplicity on setup. But I strongly engourage you to use queues.
+
+If you want your email to implement ShouldQueue interface, therefore to be queueable. You can pass it the `-s`, `--queue` flag.
+Then your generated email in the `app/mail/ActivateAccount.php` would implement the ShouldQueue interface.
+
+Read more on queues. 
 
 ## Generated Files
 List of all the generated files from the `auth:email` command:
