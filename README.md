@@ -69,6 +69,8 @@ To change the look of the activation email you send to the user, you have to mod
 This file uses Laravel's 5.4 new feature markdown mailables, please refer to the Laravel documentation for details.
 https://laravel.com/docs/5.4/mail#markdown-mailables
 
+The mailable that is responsible for the markup (subject,sender etc) of the activation mail, is generated in the `app/Mail/ActivateAccount.php`.
+
 ## Flash messages
 Auth-email provides 2 flash messages out of the box.
 
@@ -85,7 +87,9 @@ The default behavior is not to implement the ShouldQueue interface, for simplici
 If you want your email to implement ShouldQueue interface, therefore to be queueable. You can pass it the `-s`, `--queue` flag.
 Then your generated email in the `app/mail/ActivateAccount.php` would implement the ShouldQueue interface.
 
-Read more on queues. 
+Alternatively you can manually make it implement ShouldQueue interface.
+
+You can read more about queues on Laravel's documentation https://laravel.com/docs/5.4/queues.
 
 ## Generated Files
 List of all the generated files from the `auth:email` command:
@@ -99,6 +103,7 @@ List of all the generated files from the `auth:email` command:
 | Y_m_d_His_create_user_activations_table.php     | /database/migrations/               | Migration that creates table user_activations   |
 | Y_m_d_His_add_boolean_column_to_users_table.php | /database/migrations/               | Adds column activated to users table            |
 | authEmail.php                                   | /resources/lang/en/                 | The messages text exists in this file           |
+| ActivateAccount.php                             | /app/Mail/                          | Mailable, sends the activation mail.            |
 
 Also one more line is appended into your routes file `web.php`, which creates the activation route of your application.
 The activation route looks like this `/user/activation/{token}`.
