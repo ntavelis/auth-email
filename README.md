@@ -82,7 +82,7 @@ If you need to change these messages, you can do so from this file `resources/la
 
 ## Queue
 
-The default behavior is not to implement the ShouldQueue interface, for simplicity on setup. But I strongly engourage you to use queues.
+The default behavior is not to implement the ShouldQueue interface, for simplicity on setup. But I strongly encourage you to use queues.
 
 If you want your email to implement ShouldQueue interface, therefore to be queueable. You can pass it the `-s`, `--queue` flag.
 Then your generated email in the `app/mail/ActivateAccount.php` would implement the ShouldQueue interface.
