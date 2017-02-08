@@ -36,12 +36,12 @@ class RegisterController extends Controller {
     protected $redirectTo = '/home';
 
     /**
+     * Property that holds instance of Email class
      * @var EmailService
      */
     protected $EmailService;
 
     /**
-     * Create a new controller instance.
      * @param EmailService $EmailService
      */
     public function __construct(EmailService $EmailService)

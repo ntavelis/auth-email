@@ -69,7 +69,7 @@ class AuthEmailServiceProvider extends ServiceProvider
         /**
          * Register singleton, ShouldQueue class
          * should be resolved out of the
-         * container only one time
+         * container only one time.
          */
         $this->app->singleton('Ntavelis\AuthEmail\Commands\actions\ShouldQueue');
     }

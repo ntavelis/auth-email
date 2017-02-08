@@ -7,10 +7,6 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Ntavelis\AuthEmail\EmailService;
 
-/**
- * Class LoginController
- * @package App\Http\Controllers\Auth
- */
 class LoginController extends Controller {
 
     /*
@@ -28,18 +24,17 @@ class LoginController extends Controller {
 
     /**
      * Where to redirect users after login.
-     *
      * @var string
      */
     protected $redirectTo = '/home';
 
     /**
+     * Property that holds instance of Email class
      * @var EmailService
      */
     protected $EmailService;
 
     /**
-     * Create a new controller instance.
      * @param EmailService $EmailService
      */
     public function __construct(EmailService $EmailService)
@@ -49,10 +44,10 @@ class LoginController extends Controller {
     }
 
     /**
-     * In every login attempt trait this function is triggered from the
-     * AuthenticatesUsers Trait, if he is not Authenticated proper
-     * Flash message is displayed on the screen.
-     * 
+     * In every login attempt this function is triggered from the
+     * AuthenticatesUsers Trait, if he is not Authenticated properly
+     * the flash message is displayed on the screen.
+     *
      * @param Request $request
      * @param $user
      * @return \Illuminate\Http\RedirectResponse
