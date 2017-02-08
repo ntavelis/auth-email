@@ -3,6 +3,7 @@ namespace Ntavelis\AuthEmail\Services;
 
 use Ntavelis\AuthEmail\Services\Interfaces\Email;
 use Illuminate\Contracts\Mail\Mailer as Mail;
+use App\Mail\ActivateAccount;
 
 class EmailAdapter implements Email {
 
