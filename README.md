@@ -45,9 +45,9 @@ Note: Make sure you configured your database settings properly before running th
 Auth-email can make your generated `app/mail/ActivateAccount.php` implement the ShouldQueue interface. Pass it the `-s`, `--queue` flag.
 
 ``` bash
-$ php artisan auth:email -o -m
+$ php artisan auth:email -s
 ```
-Note: Make sure you configured your queues, otherwise no email would be send.
+Note: Make sure you configured your queue driver properly.
 
 You can also run the command with any number of flags.
 
