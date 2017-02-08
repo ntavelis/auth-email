@@ -14,6 +14,6 @@ return [
     */
 
     'confirm' => 'You need to verify your email address to continue. Please check the email we sent you.',
-    'mailSend' => 'We sent you a verification email. Please check your inbox to activate this account.'
+    'mailSend' => 'We sent you a verification email. Please check your inbox to activate this account.',
 
 ];

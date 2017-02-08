@@ -4,14 +4,9 @@ namespace Ntavelis\AuthEmail\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Ntavelis\AuthEmail\Commands\actions\AppendsToFiles;
-use Ntavelis\AuthEmail\Commands\actions\CreateFiles;
-use Ntavelis\AuthEmail\Commands\actions\DeleteFiles;
+use Ntavelis\AuthEmail\Commands\Actions\Actions;
+use Ntavelis\AuthEmail\Commands\actions\ShouldQueue;
 
-/**
- * Class AuthEmail
- * @package Ntavelis\emailauth\Commands
- */
 class AuthEmail extends Command {
 
     /**
@@ -27,7 +22,8 @@ class AuthEmail extends Command {
      * @var string
      */
     protected $signature = 'auth:email {--o|only : Do not run make:auth command. }
-                                        {--m|migrate : After setup run migrations. }';
+                                        {--m|migrate : After setup run migrations. }
+                                        {--s|queue : The Activation Email should queue. }';
 
     /**
      * The console command description.
@@ -56,28 +52,36 @@ class AuthEmail extends Command {
     /**
      * Execute the console command.
      *
-     * @param DeleteFiles $delete
-     * @param CreateFiles $create
-     * @param AppendsToFiles $append
-     * @return mixed
+     * @param Actions $actions
      */
-    public function handle(DeleteFiles $delete,CreateFiles $create,AppendsToFiles $append)
+    public function handle(Actions $actions)
     {
         /**
          * Unless flag --only is passed, call the `make:auth` artisan command.
          */
-        if(! $this->option('only')){
+        if (!$this->option('only')) {
             $this->call('make:auth');
         }
 
-        $delete->run();
-        $create->run();
-        $append->run();
+        /**
+         * If flag --queue is passed, make the mailable implement ShouldQueue interface.
+         */
+        if ($this->option('queue')) {
+            ShouldQueue::$bool = true;
+        }
+
+        /**
+         * We iterate through all the actions and
+         * execute run() method on each one.
+         */
+        foreach ($actions->actions as $action) {
+            $action->run();
+        }
 
         /**
          * If the flag --migrate is passed, call the `migrate` artisan command.
          */
-        if($this->option('migrate')){
+        if ($this->option('migrate')) {
             $this->call('migrate');
         }
 
@@ -89,13 +93,13 @@ class AuthEmail extends Command {
      */
     private function Success()
     {
-        $migrated='';
+        $migrated = '';
 
-        if($this->option('migrate')){
-            $migrated=' and migrated database';
+        if ($this->option('migrate')) {
+            $migrated = ' and migrated database';
         }
 
-        $this->info('Email authentication generated successfully'.$migrated.'.');
+        $this->info('Email authentication generated successfully' . $migrated . '.');
 
         $this->composer->dumpAutoloads();
     }

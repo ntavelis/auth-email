@@ -25,6 +25,14 @@ class CreateFiles extends Files {
             $this->filesystem->put($filePath, $this->compileStub($fileName));
         }
 
+        //Create activation mail, if the --queue flag is passed, then it implements the ShouldQueue interface.
+        foreach ($this->getEmails() as $fileName => $filePath) {
+            $this->makeDirectory($filePath);
+            $stub = $this->filesystem->get(__DIR__ . '/../../stubs/' . $fileName . '.stub');
+
+            $this->filesystem->put($filePath, $this->replaceShouldQueue($stub));
+        }
+
         //Create language files
         foreach ($this->getLanguages() as $fileName => $filePath) {
             $this->filesystem->put($filePath, $this->compileStub($fileName));

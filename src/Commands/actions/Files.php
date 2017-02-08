@@ -3,22 +3,16 @@ namespace Ntavelis\AuthEmail\Commands\actions;
 
 use Illuminate\Filesystem\Filesystem;
 
-abstract class Files {
-
-    /**
-     * The filesystem instance.
-     *
-     * @var Filesystem
-     */
-    protected $filesystem;
+abstract class Files extends FilesInteractions {
 
     /**
      * Files constructor.
      * @param Filesystem $filesystem
+     * @param ShouldQueue $queue
      */
     public function __construct(Filesystem $filesystem)
     {
-        $this->filesystem = $filesystem;
+        parent::__construct($filesystem);
     }
 
     /**
@@ -46,7 +40,7 @@ abstract class Files {
         $path = base_path() . '/resources/views/';
         $files = [
             'login.blade' => $path . 'auth/login.blade.php',
-            'auth.email'   => $path . 'emails/auth.blade.php',
+            'auth.email'  => $path . 'emails/auth.blade.php',
         ];
 
         return $files;
@@ -83,47 +77,25 @@ abstract class Files {
         return $files;
     }
 
-
     /**
-     * Build the directory for the class if necessary.
+     * Get the path to the blade login file.
      *
-     * @param  string $path
-     * @return string
+     * @return array
      */
-    protected function makeDirectory($path)
+    protected function getEmails()
     {
-        if (!$this->filesystem->isDirectory(dirname($path))) {
-            $this->filesystem->makeDirectory(dirname($path), 0777, true, true);
-        }
+        $path = base_path() . '/app/Mail/';
+        $files = [
+            'ActivationEmail' => $path . 'ActivateAccount.php',
+        ];
+
+        return $files;
     }
 
-    /**
-     * Compile the migration stub.
-     *
-     * @param $fileName
-     * @return string
-     */
-    protected function compileStub($fileName)
-    {
-        $stub = $this->filesystem->get(__DIR__ . '/../../stubs/' . $fileName . '.stub');
-
-        return $stub;
-    }
-
-    /**
-     * Append to a file a particular stub.
-     * @param $file
-     * @param $stub
-     * @return int
-     */
-    protected function AppendTo($file, $stub)
-    {
-        return $this->filesystem->append(base_path() . '/routes/' . $file . '.php', $this->compileStub($stub));
-    }
 
     /**
      * Every subclass must provide a run method.
      * @return mixed
      */
-    abstract function run();
+    public abstract function run();
 }
