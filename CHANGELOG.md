@@ -17,7 +17,7 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Nothing
 
 ### Fixed
-- Documentation - 2017-02-06
+- Documentation - 2017-02-08
 
 ### Removed
 - Nothing
