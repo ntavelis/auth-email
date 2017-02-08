@@ -69,7 +69,7 @@ To change the look of the activation email you send to the user, you have to mod
 This file uses Laravel's 5.4 new feature markdown mailables, please refer to the Laravel documentation for details.
 https://laravel.com/docs/5.4/mail#markdown-mailables
 
-The mailable that is responsible for the markup (subject,sender etc) of the activation mail, is generated in the `app/Mail/ActivateAccount.php`.
+The mailable that is responsible for the markup (subject,sender etc) of the activation mail, is located in the `app/Mail/ActivateAccount.php`.
 
 ## Flash messages
 Auth-email provides 2 flash messages out of the box.
