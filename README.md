@@ -49,7 +49,7 @@ $ php artisan auth:email -o -m
 ```
 Note: Make sure you configured your queues, otherwise no email would be send.
 
-You can also run command with any number of flags.
+You can also run the command with any number of flags.
 
 ``` bash
 $ php artisan auth:email -o -m -s
