@@ -40,14 +40,14 @@ Auth-email can run your migrations after setup, to keep installation process as 
 ``` bash
 $ php artisan auth:email -m
 ```
-Note: make sure you configured your database settings properly before running the command.
+Note: Make sure you configured your database settings properly before running the command.
 
-Auth-email can make your generated `app/mail/ActivateAccount.php` implement the ShouldQueue itnerface. Pass it the `-s`, `--queue` flag.
+Auth-email can make your generated `app/mail/ActivateAccount.php` implement the ShouldQueue interface. Pass it the `-s`, `--queue` flag.
 
 ``` bash
 $ php artisan auth:email -o -m
 ```
-Note:Make sure you configured your queues, otherwise no email would be send.
+Note: Make sure you configured your queues, otherwise no email would be send.
 
 You can also run command with any number of flags.
 
