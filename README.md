@@ -40,12 +40,19 @@ Auth-email can run your migrations after setup, to keep installation process as 
 ``` bash
 $ php artisan auth:email -m
 ```
-Note: make sure you configured your database settings properly before running the command.
+Note: Make sure you configured your database settings properly before running the command.
 
-You can also run command with both flags.
+Auth-email can make your generated `app/mail/ActivateAccount.php` implement the ShouldQueue interface. Pass it the `-s`, `--queue` flag.
 
 ``` bash
 $ php artisan auth:email -o -m
+```
+Note: Make sure you configured your queues, otherwise no email would be send.
+
+You can also run the command with any number of flags.
+
+``` bash
+$ php artisan auth:email -o -m -s
 ```
 ## Migrations
 After the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
@@ -62,6 +69,8 @@ To change the look of the activation email you send to the user, you have to mod
 This file uses Laravel's 5.4 new feature markdown mailables, please refer to the Laravel documentation for details.
 https://laravel.com/docs/5.4/mail#markdown-mailables
 
+The mailable that is responsible for the markup (subject,sender etc) of the activation mail, is located in the `app/Mail/ActivateAccount.php`.
+
 ## Flash messages
 Auth-email provides 2 flash messages out of the box.
 
@@ -70,6 +79,17 @@ The `authEmail.mailSend` message informs the user after registration to check th
 The `authEmail.confirm` message informs the user, who just tried to login without being authenticated, that they have to click the activate button on the email we sent them.
 
 If you need to change these messages, you can do so from this file `resources/lang/en/authEmail.php`.
+
+## Queue
+
+The default behavior is not to implement the ShouldQueue interface, for simplicity on setup. But I strongly encourage you to use queues.
+
+If you want your email to implement ShouldQueue interface, therefore to be queueable. You can pass it the `-s`, `--queue` flag.
+Then your generated email in the `app/mail/ActivateAccount.php` would implement the ShouldQueue interface.
+
+Alternatively you can manually make it implement ShouldQueue interface.
+
+You can read more about queues on Laravel's documentation https://laravel.com/docs/5.4/queues.
 
 ## Generated Files
 List of all the generated files from the `auth:email` command:
@@ -83,6 +103,7 @@ List of all the generated files from the `auth:email` command:
 | Y_m_d_His_create_user_activations_table.php     | /database/migrations/               | Migration that creates table user_activations   |
 | Y_m_d_His_add_boolean_column_to_users_table.php | /database/migrations/               | Adds column activated to users table            |
 | authEmail.php                                   | /resources/lang/en/                 | The messages text exists in this file           |
+| ActivateAccount.php                             | /app/Mail/                          | Mailable, sends the activation mail.            |
 
 Also one more line is appended into your routes file `web.php`, which creates the activation route of your application.
 The activation route looks like this `/user/activation/{token}`.
