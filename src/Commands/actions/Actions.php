@@ -19,9 +19,6 @@ class Actions {
      */
     public function __construct(DeleteFiles $delete, CreateFiles $create, AppendsToFiles $append, ReplaceStringsToFiles $replace)
     {
-        array_push($this->actions, $delete);
-        array_push($this->actions, $create);
-        array_push($this->actions, $append);
-        array_push($this->actions, $replace);
+        array_push($this->actions, $delete,$create,$append,$replace);
     }
 }
