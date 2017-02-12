@@ -97,7 +97,7 @@ You can read more about queues on Laravel's documentation https://laravel.com/do
 
 This package adds one more validation rule called `alpha_spaces`. It considers valid alphanumeric characters and spaces, and is used to validate the `name`, on the registration form.
 
-You can find the display message in, `resources/lang/en/validation.php`, and if you are interested the validation logic is located in this packages ServiceProvider on the register method.
+You can find the display message in, `resources/lang/en/validation.php`, and if you are interested the validation logic is located in this package's ServiceProvider on the register method.
 
 ## Generated Files
 List of all the generated files from the `auth:email` command:
