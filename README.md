@@ -6,8 +6,6 @@
 
 Auth-email provides out of the box email authentication for your Laravel 5.4 application. It leverages the Laravel's functionality provided by the `make:auth` command, which runs for you and then proceeds to configure email authentication.
 
-Requires PHP >= 7.0.0
-
 ## Installation
 
 Via Composer
@@ -116,6 +114,10 @@ List of all the generated files from the `auth:email` command:
 Also one more line is appended into your routes file `web.php`, which creates the activation route of your application.
 The activation route looks like this `/user/activation/{token}`.
 
+## Requirements
+
+Requires PHP >= 7.0.0
+Laravel Framework 5.4.*
 
 ## Change log
 
