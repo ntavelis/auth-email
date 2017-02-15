@@ -12,12 +12,16 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - V1.1.0 - Added -m|--migrate flag.
 - V1.2.0 - Added -s|--queue flag.
 - V1.2.1 - Cleared documentation and comments.
+- V1.2.2 - Some cleanup.
+- V1.2.3 - Wrong namespace in App/Mail/ActivateAccound.php, fixed.
 
 ### Deprecated
 - Nothing
 
 ### Fixed
 - Documentation - 2017-02-08
+- Documentation - 2017-02-13
+- Wrong namespace in App/Mail/ActivateAccound.php
 
 ### Removed
 - Nothing
