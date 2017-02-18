@@ -24,6 +24,9 @@ Run your new command:
 ``` bash
 $ php artisan auth:email
 ```
+Finally run your migrations. Now you have email Authentication. Visit `/register` to register a new user via email.
+
+Note: Make sure you configured your email settings properly.
 
 ## Options/Parameters
 
