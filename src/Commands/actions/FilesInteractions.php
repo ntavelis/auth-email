@@ -89,7 +89,11 @@ abstract class FilesInteractions {
      */
     public function replaceAndSave($oldFile, $search, $replace, $newFile = null)
     {
-        $newFile = $newFile ?? $oldFile;
+    	// PHP 7.0 coalesce feature... not available in 5.6
+        //$newFile = $newFile ?? $oldFile;
+	    if(! isset($newFile) || $newFile == NULL ){
+	    	$newFile = $oldFile;
+	    }
         $file = $this->filesystem->get($oldFile);
         $replacing = str_replace($search, $replace, $file);
         $this->filesystem->put($newFile, $replacing);

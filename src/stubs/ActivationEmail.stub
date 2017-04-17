@@ -20,9 +20,9 @@ class ActivateAccount extends Mailable {{ShouldQueue}} {
     /**
      * Create a new message instance.
      *
-     * @param String $link
+     * @param $link
      */
-    public function __construct(String $link)
+    public function __construct($link)
     {
         $this->link = $link;
     }
