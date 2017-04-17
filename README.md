@@ -119,7 +119,7 @@ The activation route looks like this `/user/activation/{token}`.
 
 ## Requirements
 
-Requires PHP >= 7.0.0
+Requires PHP >= 5.6.*
 
 Laravel Framework 5.4.*
 
