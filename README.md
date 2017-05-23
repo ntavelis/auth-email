@@ -60,7 +60,7 @@ You can also run the command with any number of flags.
 $ php artisan auth:email -o -m -s
 ```
 ## Migrations
-Aafter the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
+After the initial installation, you need to run your migrations, auth-email added 2 migration files on your `database/migrations/` path.
 Which provide 1 new table to store activation tokens and 1 new column in the user table, create_users_table migration is provided by default in laravel, we just add 1 column with the new migration to track the authenticated(Via email) users.
 
 Alternatively as mentioned above pass it the `-m` flag to instantly run the migrations for you after setup.
