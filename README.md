@@ -1,4 +1,4 @@
-# Laravel 5.4 auth-email
+# Laravel 5.3, 5.4, 5.5-dev auth-email
 
 [![Latest Stable Version](https://poser.pugx.org/ntavelis/auth-email/v/stable)](https://packagist.org/packages/ntavelis/auth-email)
 [![License](https://poser.pugx.org/ntavelis/auth-email/license)](https://packagist.org/packages/ntavelis/auth-email)
