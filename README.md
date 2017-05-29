@@ -1,4 +1,4 @@
-# Laravel 5.3, 5.4, 5.5-dev auth-email
+# Laravel auth-email
 
 [![Latest Stable Version](https://poser.pugx.org/ntavelis/auth-email/v/stable)](https://packagist.org/packages/ntavelis/auth-email)
 [![License](https://poser.pugx.org/ntavelis/auth-email/license)](https://packagist.org/packages/ntavelis/auth-email)
@@ -123,7 +123,7 @@ The activation route looks like this `/user/activation/{token}`.
 
 Requires PHP >= 5.6.*
 
-Laravel Framework >= 5.3
+Laravel Framework >= 5.4
 
 ## Change log
 
