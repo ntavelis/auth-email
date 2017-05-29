@@ -1,7 +1,7 @@
 {
     "name": "ntavelis/auth-email",
     "type": "library",
-    "description": "Generates Email Authentication in Laravel 5.3, 5.4, 5.5-dev on top of artisan's make:auth command.",
+    "description": "Generates Email Authentication in Laravel >= 5.4 on top of artisan's make:auth command.",
     "keywords": [
         "Laravel",
         "AuthEmail"
