@@ -123,7 +123,7 @@ The activation route looks like this `/user/activation/{token}`.
 
 Requires PHP >= 5.6.*
 
-Laravel Framework >= 5.4
+Laravel Framework to be installed, with version >= 5.4
 
 ## Change log
 
