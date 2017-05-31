@@ -15,8 +15,11 @@
             "role": "Developer"
         }
     ],
-    "require": {
-        "laravel/laravel": "~5.4",
+    "require": {      
+        "illuminate/contracts": "~5.4",
+        "illuminate/http": "~5.4",
+        "illuminate/support": "~5.4",
+        "illuminate/filesystem": "~5.4",
         "php": ">=5.6.4"
     },
     "require-dev": {
