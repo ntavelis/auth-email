@@ -9,6 +9,6 @@ class AppendsToFiles extends Files {
     public function run()
     {
         //Appends to routes file (Web.php)
-        $this->AppendTo('Web', 'Routes');
+        $this->AppendTo('web', 'Routes');
     }
 }
