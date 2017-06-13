@@ -1,5 +1,5 @@
 <?php
-namespace Ntavelis\AuthEmail\Commands\actions;
+namespace Ntavelis\AuthEmail\Commands\Actions;
 
 class AppendsToFiles extends Files {
 

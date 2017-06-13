@@ -5,7 +5,7 @@ namespace Ntavelis\AuthEmail\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Ntavelis\AuthEmail\Commands\Actions\Actions;
-use Ntavelis\AuthEmail\Commands\actions\ShouldQueue;
+use Ntavelis\AuthEmail\Commands\Actions\ShouldQueue;
 
 class AuthEmail extends Command {
 
@@ -71,7 +71,7 @@ class AuthEmail extends Command {
         }
 
         /**
-         * We iterate through all the actions and
+         * We iterate through all the Actions and
          * execute run() method on each one.
          */
         foreach ($actions->actions as $action) {

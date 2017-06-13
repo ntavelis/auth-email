@@ -6,7 +6,7 @@ class Actions {
     /**
      * Array which holds all the instances
      * of the action classes we pass through the constructor
-     * @array actions
+     * @array Actions
      */
     public $actions = [];
 
