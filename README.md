@@ -17,8 +17,11 @@ $ composer require ntavelis/auth-email
 ```
 Then add the service provider in `config/app.php`:
 
+Note: Starting with Laravel 5.5 this package gets auto discovered so you can skip this step!
 ```php
-Ntavelis\AuthEmail\AuthEmailServiceProvider::class,
+'providers' => [
+    Ntavelis\AuthEmail\AuthEmailServiceProvider::class,
+];
 ```
 
 Run your new command:
