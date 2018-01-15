@@ -11,8 +11,7 @@ use Illuminate\Contracts\Validation\Factory as Validator;
 use Ntavelis\AuthEmail\Services\EmailAdapter;
 use Ntavelis\AuthEmail\Services\Interfaces\Email;
 
-class AuthEmailServiceProvider extends ServiceProvider
-{
+class AuthEmailServiceProvider extends ServiceProvider {
 
     /**
      * Perform post-registration booting of services.
@@ -41,8 +40,7 @@ class AuthEmailServiceProvider extends ServiceProvider
         /**
          * Register custom Validator for alphanumeric with spaces
          */
-        $validator->extend('alpha_spaces', function($attribute, $value)
-        {
+        $validator->extend('alpha_spaces', function ($attribute, $value) {
             return preg_match('/^[\pL\s]+$/u', $value);
         });
     }

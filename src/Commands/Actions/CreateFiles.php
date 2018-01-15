@@ -1,4 +1,5 @@
 <?php
+
 namespace Ntavelis\AuthEmail\Commands\Actions;
 
 class CreateFiles extends Files {

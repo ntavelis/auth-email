@@ -1,4 +1,5 @@
 <?php
+
 namespace Ntavelis\AuthEmail\Services;
 
 use Ntavelis\AuthEmail\Services\Interfaces\Email;
@@ -12,13 +13,14 @@ class EmailAdapter implements Email {
      * @var Mail
      */
     protected $mail;
+
     /**
      * EmailAdapter constructor.
      * @param Mail $mail
      */
     public function __construct(Mail $mail)
     {
-        $this->mail=$mail;
+        $this->mail = $mail;
     }
 
     /**

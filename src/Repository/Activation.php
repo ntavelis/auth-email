@@ -9,8 +9,7 @@ use Illuminate\Database\Connection;
  * Class ActivationRepository
  * @package App
  */
-class Activation implements ActivationInterface
-{
+class Activation implements ActivationInterface {
 
     /**
      * @var Connection
@@ -51,6 +50,7 @@ class Activation implements ActivationInterface
         if (!$activation) {
             return $this->createToken($user);
         }
+
         return $this->regenerateToken($user);
 
     }
@@ -64,9 +64,10 @@ class Activation implements ActivationInterface
 
         $token = $this->getToken();
         $this->db->table($this->table)->where('user_id', $user->id)->update([
-            'token' => $token,
+            'token'      => $token,
             'created_at' => new Carbon()
         ]);
+
         return $token;
     }
 
@@ -78,10 +79,11 @@ class Activation implements ActivationInterface
     {
         $token = $this->getToken();
         $this->db->table($this->table)->insert([
-            'user_id' => $user->id,
-            'token' => $token,
+            'user_id'    => $user->id,
+            'token'      => $token,
             'created_at' => new Carbon()
         ]);
+
         return $token;
     }
 

@@ -11,6 +11,7 @@ namespace Ntavelis\AuthEmail\Commands\Actions;
 use Illuminate\Filesystem\Filesystem;
 
 abstract class FilesInteractions {
+
     /**
      * The filesystem instance.
      *
@@ -71,29 +72,30 @@ abstract class FilesInteractions {
      */
     protected function replaceShouldQueue(&$stub)
     {
-        if(ShouldQueue::$bool){
+        if (ShouldQueue::$bool) {
             return $stub = str_replace('{{ShouldQueue}}', 'implements ShouldQueue', $stub);
         }
-        return $stub =  str_replace('{{ShouldQueue}}', '', $stub);
+
+        return $stub = str_replace('{{ShouldQueue}}', '', $stub);
     }
 
     /**
      * Open haystack, find and replace needles, save haystack.
      *
      * @param  string $oldFile The haystack
-     * @param  mixed  $search  String or array to look for (the needles)
-     * @param  mixed  $replace What to replace the needles for?
+     * @param  mixed $search String or array to look for (the needles)
+     * @param  mixed $replace What to replace the needles for?
      * @param  string $newFile Where to save, defaults to $oldFile
      *
      * @return void
      */
     public function replaceAndSave($oldFile, $search, $replace, $newFile = null)
     {
-    	// PHP 7.0 coalesce feature... not available in 5.6
+        // PHP 7.0 coalesce feature... not available in 5.6
         //$newFile = $newFile ?? $oldFile;
-	    if(! isset($newFile) || $newFile == NULL ){
-	    	$newFile = $oldFile;
-	    }
+        if (!isset($newFile) || $newFile == null) {
+            $newFile = $oldFile;
+        }
         $file = $this->filesystem->get($oldFile);
         $replacing = str_replace($search, $replace, $file);
         $this->filesystem->put($newFile, $replacing);
