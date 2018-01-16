@@ -40,12 +40,10 @@ class AuthEmail extends Command {
     /**
      * Create a new command instance.
      *
-     * @param Filesystem $filesystem
      */
-    public function __construct(Filesystem $filesystem)
+    public function __construct()
     {
         parent::__construct();
-        $this->filesystem = $filesystem;
         $this->composer = app()['composer'];
     }
 
