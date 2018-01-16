@@ -10,13 +10,6 @@ use Ntavelis\AuthEmail\Commands\Actions\ShouldQueue;
 class AuthEmail extends Command {
 
     /**
-     * The filesystem instance.
-     *
-     * @var Filesystem
-     */
-    protected $filesystem;
-
-    /**
      * The name and signature of the console command.
      *
      * @var string
