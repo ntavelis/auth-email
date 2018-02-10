@@ -4,8 +4,8 @@ namespace Ntavelis\AuthEmail\Commands\Actions;
 
 use Illuminate\Filesystem\Filesystem;
 
-abstract class Files extends FilesInteractions {
-
+abstract class Files extends FilesInteractions
+{
     /**
      * Files constructor.
      * @param Filesystem $filesystem
@@ -24,7 +24,7 @@ abstract class Files extends FilesInteractions {
     {
         $path = base_path() . '/app/Http/Controllers/Auth/';
         $files = [
-            'LoginController'    => $path . 'LoginController.php',
+            'LoginController' => $path . 'LoginController.php',
             'RegisterController' => $path . 'RegisterController.php',
         ];
 
@@ -32,16 +32,17 @@ abstract class Files extends FilesInteractions {
     }
 
     /**
-     * Get the path to the blade login file.
+     * Get the path to the blade files.
      *
      * @return array
      */
     protected function getBlades()
     {
         $path = base_path() . '/resources/views/';
+        $loginStub = $this->laravelVersion >= 5.6 ? 'login.blade.b4' : 'login.blade';
         $files = [
-            'login.blade' => $path . 'auth/login.blade.php',
-            'auth.email'  => $path . 'emails/auth.blade.php',
+            $loginStub => $path . 'auth/login.blade.php',
+            'auth.email' => $path . 'emails/auth.blade.php',
         ];
 
         return $files;
@@ -72,7 +73,7 @@ abstract class Files extends FilesInteractions {
         $path = base_path() . '/database/migrations/';
         $files = [
             'MigrationActivations' => $path . $formatted_date . '_create_user_activations_table.php',
-            'MigrationUsers'       => $path . $formatted_date . '_add_boolean_column_to_users_table.php'
+            'MigrationUsers' => $path . $formatted_date . '_add_boolean_column_to_users_table.php'
         ];
 
         return $files;

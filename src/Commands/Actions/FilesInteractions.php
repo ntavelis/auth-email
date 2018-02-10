@@ -8,6 +8,7 @@
 
 namespace Ntavelis\AuthEmail\Commands\Actions;
 
+use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
 
 abstract class FilesInteractions {
@@ -20,12 +21,19 @@ abstract class FilesInteractions {
     protected $filesystem;
 
     /**
+     * Holds the Laravel's framework version
+     * @var float
+     */
+    protected $laravelVersion;
+
+    /**
      * Files constructor.
      * @param Filesystem $filesystem
      */
     public function __construct(Filesystem $filesystem)
     {
         $this->filesystem = $filesystem;
+        $this->laravelVersion = (float) Container::getInstance()->version();
     }
 
     /**
@@ -91,8 +99,6 @@ abstract class FilesInteractions {
      */
     public function replaceAndSave($oldFile, $search, $replace, $newFile = null)
     {
-        // PHP 7.0 coalesce feature... not available in 5.6
-        //$newFile = $newFile ?? $oldFile;
         if (!isset($newFile) || $newFile == null) {
             $newFile = $oldFile;
         }
