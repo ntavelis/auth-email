@@ -21,7 +21,7 @@ abstract class FilesInteractions {
     protected $filesystem;
 
     /**
-     * Holds the Laravel's framework version
+     * Holds the Laravel's version
      * @var float
      */
     protected $laravelVersion;
