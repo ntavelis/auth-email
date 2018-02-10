@@ -130,9 +130,9 @@ Laravel Framework to be installed, with version >= 5.4
 
 ## Supported Laravel versions
 
-This package supports all Laravel version from 5.4 onwards.
+This package supports all Laravel versions from 5.4 onwards.
 
-- From version 1.4.0, support has been added for Laravel 5.6.
+- From version 1.4.0, support has been added for Laravel 5.6
 
 ## Change log
 
